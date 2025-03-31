@@ -96,5 +96,10 @@ namespace Calculator
             txtNumber.Text += "0";
             // 這種寫法和這段「txtNumber.Text = txtNumber.Text + "1";」是一樣的
         }
+
+        private void btnClear_Click(object sender, EventArgs e)//清除按鍵
+        {
+            txtNumber.Text = "0";
+        }
     }
 }
