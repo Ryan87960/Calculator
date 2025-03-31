@@ -12,6 +12,10 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        // 全域變數
+        float firstNumber, secondNumber; // firstNumber 儲存第一個數字，secondNumber 儲存第二個數字
+        int operators = -1; // 記錄選擇哪一種運算符號？0:加、1:減、2:乘、3:除、-1:重新設定
+
         public Form1()
         {
             InitializeComponent();
@@ -95,6 +99,34 @@ namespace Calculator
                 txtNumber.Text = ""; // 如果你的判斷式簡單到只有一行程式，可以把 { } 大刮號省略掉
             txtNumber.Text += "0";
             // 這種寫法和這段「txtNumber.Text = txtNumber.Text + "1";」是一樣的
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = 0; //選擇「加」號
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = 1; //選擇「減」號
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = 2; //選擇「乘」號
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = 3; //選擇「除」號
         }
 
         private void btnClear_Click(object sender, EventArgs e)//清除按鍵
