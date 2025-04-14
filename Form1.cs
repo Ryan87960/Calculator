@@ -27,6 +27,14 @@ namespace Calculator
             txtNumber.Text = txtNumber.Text + _number;
         }
 
+        private void Select_Operator(int _operator)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = _operator; //選擇「加」號
+        }
+
+
 
         private void btnOne_Click(object sender, EventArgs e)
         {
@@ -120,30 +128,34 @@ namespace Calculator
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
-            operators = 0; //選擇「加」號
+            Select_Operator(0); //選擇「加」號
+            //firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            //txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            //operators = 0; //選擇「加」號
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
-            operators = 1; //選擇「減」號
+            Select_Operator(1); //選擇「減」號
+            //firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            //txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            //operators = 1; //選擇「減」號
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
-            operators = 2; //選擇「乘」號
+            Select_Operator(2); //選擇「乘」號
+            //firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            //txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            //operators = 2; //選擇「乘」號
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
-            operators = 3; //選擇「除」號
+            Select_Operator(3); //選擇「除」號
+            //firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            //txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            //operators = 3; //選擇「除」號
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
